@@ -11,9 +11,9 @@ spec:
    metadata:
      labels:
        app: shizgara-nodejs-app
-   spec:                  
+   spec:
      containers:
-     - name: shizgara-nodejs-app
-       image: shizgara/simple_react_app:latest
+     - name: simple-react-app
+       image: docker.io/shizgara/simple_react_app:latest
        ports:
        - containerPort: 3001
