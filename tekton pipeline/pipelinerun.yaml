@@ -27,4 +27,4 @@ spec:
   - name: image-reference
     value: docker.io/shizgara/simple_react_app:latest
   - name: pathToYamlFile
-    value: Deployment.yaml
+    value: manifest/Deployment.yaml
