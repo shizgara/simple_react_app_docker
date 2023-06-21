@@ -1,0 +1,78 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: clone-build-push
+spec:
+  description: | 
+    This pipeline clones a git repo, builds a Docker image with Kaniko and
+    pushes it to a registry. Then Deploy it
+  params: # тут ми типу оголошуємо змінні
+# змінні ті що передають з pipelinerun
+  - name: repo-url
+    type: string
+  - name: image-reference
+    type: string
+  - name: pathToYamlFile
+    default: manifest/
+    description: The path to the yaml file to deploy within the git source
+# Змінні з дефолтними значеннями
+  - name: pathToContext
+    description: The build context used by Kaniko.
+    default: source/
+  - name: DOCKERFILE
+    description: Path to the Dockerfile to build.
+    default: source/Dockerfile
+  workspaces:
+  - name: shared-data
+  - name: docker-credentials
+  tasks:
+########################################################
+  - name: fetch-source
+    taskRef:
+      name: git-clone
+    workspaces:
+    - name: output
+      workspace: shared-data
+    params:
+    - name: url
+      value: $(params.repo-url)
+    - name: deleteExisting
+      value: "true"
+########################################################
+  - name: build-push-image
+    runAfter: ["fetch-source"]
+    taskRef:
+      name: kaniko
+    workspaces:
+    - name: source
+      workspace: shared-data
+    - name: dockerconfig
+      workspace: docker-credentials
+    params:
+    - name: CONTEXT
+      value: $(params.pathToContext)
+    - name: IMAGE
+      value: $(params.image-reference)
+############################################################
+  - name: create-deployment # The name of the third and final task
+    taskRef:
+      name: kubernetes-actions # The name of the task this pipeline should use
+    runAfter:
+      - build-push-image
+    workspaces:
+    - name: manifest-dir
+      workspace: shared-data
+    params:
+    - name: script
+      value: |
+        kubectl apply -f $(params.pathToYamlFile)
+#   - name: create-deployment
+#      runAfter: [build-push]
+#      taskRef:
+#        name: kubernetes-actions     
+#      params:
+#        - name: script
+#          value: kubectl apply --filename $(params.pathToYamlFile)
+#      workspaces:
+#        - name: source
+#          workspace: shared-data*
