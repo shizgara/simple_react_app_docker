@@ -2,18 +2,39 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shizgara-deployment
+  labels:
+    app: my-simple-deployment
 spec:
  replicas: 2
  selector:
    matchLabels:
-     app: shizgara-nodejs-app
+     project: shizgara-react
  template:
    metadata:
      labels:
-       app: shizgara-nodejs-app
+       project: shizgara-react
    spec:
      containers:
      - name: simple-react-app
        image: docker.io/shizgara/simple_react_app:latest
        ports:
        - containerPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: my-service-react
+  labels:
+    env : tekton
+    owner : Shizgara
+spec:
+  selector:
+    project: shizgara-react
+  ports:
+    - name : listener
+      protocol : TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+  
