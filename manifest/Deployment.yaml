@@ -8,11 +8,11 @@ spec:
  replicas: 2
  selector:
    matchLabels:
-     project: shizgara-react
+     app: shizgara-react
  template:
    metadata:
      labels:
-       project: shizgara-react
+       app: shizgara-react
    spec:
      containers:
      - name: simple-react-app
@@ -21,7 +21,7 @@ spec:
        - containerPort: 3000
 
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: my-service-react
@@ -30,7 +30,7 @@ metadata:
     owner : Shizgara
 spec:
   selector:
-    project: shizgara-react
+    app: shizgara-react
   ports:
     - name : listener
       protocol : TCP
