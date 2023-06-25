@@ -51,7 +51,7 @@ cd cd simple_react_app_docker/tekton\ pipeline/ - **move to tekton files**
 
 ## Generate and apply credentials for Docker
 
-Docker login – **you have to make docker login to generate  /home/shizgara/.docker/config.json**
+Docker login – **you have to make docker login to generate  /home/shizgara/.docker/config.json**  
 Enter username and password to DockerHub. When it done, you will see
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker%20login.PNG)
