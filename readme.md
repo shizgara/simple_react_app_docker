@@ -133,9 +133,9 @@ Here we run 2 pods with our app. App running on port 3000. So Load balancer map 
 
 
 ## Links
-https://tekton.dev/docs/getting-started/tasks/
-https://adamtheautomator.com/tekton-kubernetes/
-https://earthly.dev/blog/building-k8s-tekton/
-https://developer.ibm.com/tutorials/build-and-deploy-a-docker-image-on-kubernetes-using-tekton-pipelines/
-https://hub.tekton.dev/
-https://github.com/tektoncd/cli/blob/main/README.md
+https://tekton.dev/docs/getting-started/tasks/  
+https://adamtheautomator.com/tekton-kubernetes/  
+https://earthly.dev/blog/building-k8s-tekton/  
+https://developer.ibm.com/tutorials/build-and-deploy-a-docker-image-on-kubernetes-using-tekton-pipelines/  
+https://hub.tekton.dev/  
+https://github.com/tektoncd/cli/blob/main/README.md  
