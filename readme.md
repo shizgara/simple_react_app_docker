@@ -19,11 +19,11 @@
 
 #### 2. Additional configuration
 
-####     - sudo usermod -aG docker $USER   - **add your user to the Docker group**
+sudo usermod -aG docker $USER   - **add your user to the Docker group**
 
-####     - sudo reboot - **apply(update) new system configuration**
+sudo reboot - **apply(update) new system configuration**
 
-####     - minikube start - **run minikube**
+minikube start - **run minikube**
 
 
 ---
