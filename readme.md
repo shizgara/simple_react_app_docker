@@ -1,4 +1,7 @@
-# Task 7
+# Task:
+## 1.	Install Tekton in Kubernetes cluster.
+## 2.	Using Tekton please create pipeline to build and deploy NodeJS React application
+
 
 
 ## Part 1
