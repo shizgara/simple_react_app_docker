@@ -73,7 +73,7 @@ kubectl apply -f docker-credentials.yaml – **run credentials**
 ## Run pipeline
 
 You must be in **~/simple_react_app_docker/tekton pipeline**. Here we have few files, which to runs our pipeline.
-Firstly we create the service account, which allow provides an identity for processes that run in a Pods. Here is the content of service-account.yaml
+Firstly we create the service account, which allow provides an identity for processes that run in a Pods. Here is the content of service-account.yaml  
  ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/service%20account%20yaml.PNG)
 
 #### Run service-account.yaml and check it  
