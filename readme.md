@@ -10,18 +10,18 @@
 
 #### 1. Install necessary tools
 
-#### - [Install minikube](https://minikube.sigs.k8s.io/docs/start/)
-#### - [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-#### - [Install Tekton CLI](https://tekton.dev/docs/cli/)
-#### - [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
+####     - [Install minikube](https://minikube.sigs.k8s.io/docs/start/)
+####     - [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+####     - [Install Tekton CLI](https://tekton.dev/docs/cli/)
+####     - [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 #### 2. Additional configuration
 
-#### - sudo usermod -aG docker $USER   - ***add your user to the Docker group***
+####     - sudo usermod -aG docker $USER   - ***add your user to the Docker group***
 
-#### - sudo reboot - ***apply new syste, configuration***
+####     - sudo reboot - ***apply new syste, configuration***
 
-#### - minikube start - ***run minikube ***
+####     - minikube start - ***run minikube ***
 
 
 
