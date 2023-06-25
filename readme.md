@@ -100,7 +100,7 @@ kubectl create -f pipelinerun.yaml - **run pipelinerun**
 
 #### We can see the logs of pipelinerun
 
-tkn pipelinerun logs <name created pipilinerun> -f
+tkn pipelinerun logs `<name created pipilinerun>` -f
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/log1.PNG)
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/log2.PNG)
