@@ -56,9 +56,15 @@ Enter username and password to DockerHub. When it done, you will see
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker%20login.PNG)
 
+After that you have to make secret for docker credentials. And run the output file
+kubectl create secret generic docker-credentials --from-file=/home/$USER/.docker/config.json --dry-run=client --output=yaml > docker-credentials.yaml - **make docker-credentials.yaml**
 
+![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker-credentials.png)
 
+kubectl apply -f docker-credentials.yaml – **run credentials**
+**You can check it** – kubectl get secret
 
+![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/kubectl%20get%20secret.PNG)
 
 
 
