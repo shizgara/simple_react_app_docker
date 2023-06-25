@@ -19,11 +19,11 @@
 
 #### 2. Additional configuration
 
-####     - sudo usermod -aG docker $USER   - ***add your user to the Docker group***
+####     - sudo usermod -aG docker $USER   - **add your user to the Docker group**
 
-####     - sudo reboot - ***apply(update) new system configuration***
+####     - sudo reboot - **apply(update) new system configuration**
 
-####     - minikube start - ***run minikube***
+####     - minikube start - **run minikube**
 
 
 ---
@@ -31,7 +31,7 @@
 
 ## Install Tekton in Kubernetes cluster and dependencies
 
- kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml - ***install Tekton***
+ kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml - **install Tekton**
 
  tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions - ___install tasks from Tekton Hub___
 
@@ -41,9 +41,9 @@
 
 ## Clone repository with manifest, sources and Tekton files
 
-git clone https://github.com/shizgara/simple_react_app_docker.git - ***clone repository to local instance***
+git clone https://github.com/shizgara/simple_react_app_docker.git - **clone repository to local instance**
 
-cd cd simple_react_app_docker/tekton\ pipeline/ - ***move to tekton files***
+cd cd simple_react_app_docker/tekton\ pipeline/ - **move to tekton files**
 
 
 ---
@@ -51,7 +51,7 @@ cd cd simple_react_app_docker/tekton\ pipeline/ - ***move to tekton files***
 
 ## Generate and apply credentials for Docker
 
-Docker login – ***you have to make docker login to generate  /home/shizgara/.docker/config.json***
+Docker login – **you have to make docker login to generate  /home/shizgara/.docker/config.json**
 Enter username and password to DockerHub. When it done, you will see
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker%20login.PNG)
@@ -61,7 +61,7 @@ kubectl create secret generic docker-credentials --from-file=/home/$USER/.docker
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker-credentials.png)
 
-kubectl apply -f docker-credentials.yaml – **run credentials**
+kubectl apply -f docker-credentials.yaml – **run credentials**   
 **You can check it** – kubectl get secret
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/kubectl%20get%20secret.PNG)
