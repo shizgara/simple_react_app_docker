@@ -78,6 +78,7 @@ Firstly we create the service account, which allow provides an identity for proc
 
 #### Run service-account.yaml and check it  
 kubectl apply -f service-account.yaml
+
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/kubectl%20get%20service%20account.PNG)
 
 #### Secondly we run role.yaml, which create role and bind it with service account created in previous step
