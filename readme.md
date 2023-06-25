@@ -2,9 +2,36 @@
 ### - Install Tekton in Kubernetes cluster.
 ### - Using Tekton please create pipeline to build and deploy NodeJS React application
 
+---
+
+## Preparing environment
+
+#### In my case I use EC2 instance on AWS c4.xlarge(for better performance) with Ubuntu 20.04:latest and 10 Gb storage. I use minikube as local Kubernetes
+
+#### 1. Install necessary tools
+
+#### - [Install minikube](https://minikube.sigs.k8s.io/docs/start/)
+#### - [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+#### - [Install Tekton CLI](https://tekton.dev/docs/cli/)
+#### - [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 
-## Part 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Part 1 (Install Tekton in Kubernetes cluster)
 
 #### 1-2. I have downloaded and installed  MySQL server on VM
 
