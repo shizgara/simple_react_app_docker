@@ -2,7 +2,9 @@
 ### - Install Tekton in Kubernetes cluster.
 ### - Using Tekton please create pipeline to build and deploy NodeJS React application
 
+
 ---
+
 
 ## Preparing environment
 
@@ -23,7 +25,9 @@
 
 ####     - minikube start - ***run minikube***
 
+
 ---
+
 
 ## Install Tekton in Kubernetes cluster and dependencies
 
@@ -32,9 +36,25 @@
  tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions - ___install tasks from Tekton Hub___
 
 
+ ---
 
 
+## Clone repository with manifest, sources and Tekton files
 
+git clone https://github.com/shizgara/simple_react_app_docker.git - ***clone repository to local instance***
+
+cd cd simple_react_app_docker/tekton\ pipeline/ - ***move to tekton files***
+
+
+---
+
+
+## Generate and apply credentials for Docker
+
+Docker login – ***you have to make docker login to generate  /home/shizgara/.docker/config.json***
+Enter username and password to DockerHub. When it done, you will see
+
+!(https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker%20login.PNG)
 
 
 
