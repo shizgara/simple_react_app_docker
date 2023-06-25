@@ -17,19 +17,18 @@
 
 #### 2. Additional configuration
 
-####     - sudo usermod -aG docker $USER   - ***add your user to the Docker group***
+     - sudo usermod -aG docker $USER   - ***add your user to the Docker group***
+     - sudo reboot - ***apply(update) new system configuration***
 
-####     - sudo reboot - ***apply(update) new system configuration***
-
-####     - minikube start - ***run minikube***
+     - minikube start - ***run minikube***
 
 ---
 
 ## Install Tekton in Kubernetes cluster and dependencies
 
-#### kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml - ***install Tekton***
+ kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml - ***install Tekton***
 
-#### tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions - ***install tasks from Tekton Hub***
+ tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions - ***install tasks from Tekton Hub***
 
 
 
