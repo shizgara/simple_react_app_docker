@@ -95,7 +95,7 @@ kubectl apply -f role.yaml
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/pipiline2.PNG)
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/pipilinerun.PNG)
 
-kubectl apply -f pipeline.yaml - **run pipeline**
+kubectl apply -f pipeline.yaml - **run pipeline**  
 kubectl create -f pipelinerun.yaml - **run pipelinerun**
 
 #### We can see the logs of pipelinerun
