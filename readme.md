@@ -43,7 +43,7 @@
 
 `git clone https://github.com/shizgara/simple_react_app_docker.git` - **clone repository to local instance**
 
-`cd cd simple_react_app_docker/tekton\ pipeline/` - **move to tekton files**
+`cd simple_react_app_docker/tekton\ pipeline/` - **move to tekton files**
 
 
 ---
