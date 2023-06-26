@@ -31,7 +31,7 @@ minikube start - **run minikube**
 
 ## Install Tekton in Kubernetes cluster and dependencies
 
- kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml - **install Tekton**
+ `kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml` - **install Tekton**
 
  tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions - ___install tasks from Tekton Hub___
 
