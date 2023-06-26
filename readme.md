@@ -19,11 +19,11 @@
 
 #### 2. Additional configuration
 
-sudo usermod -aG docker $USER   - **add your user to the Docker group**
+`sudo usermod -aG docker $USER`   - **add your user to the Docker group**
 
-sudo reboot - **apply(update) new system configuration**
+`sudo reboot` - **apply(update) new system configuration**
 
-minikube start - **run minikube**
+`minikube start` - **run minikube**
 
 
 ---
@@ -33,7 +33,7 @@ minikube start - **run minikube**
 
  `kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml` - **install Tekton**
 
- tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions - ___install tasks from Tekton Hub___
+ `tkn hub install task kaniko && tkn hub install task git-clone && tkn hub install task kubernetes-actions` - ___install tasks from Tekton Hub___
 
 
  ---
@@ -41,9 +41,9 @@ minikube start - **run minikube**
 
 ## Clone repository with manifest, sources and Tekton files
 
-git clone https://github.com/shizgara/simple_react_app_docker.git - **clone repository to local instance**
+`git clone https://github.com/shizgara/simple_react_app_docker.git` - **clone repository to local instance**
 
-cd cd simple_react_app_docker/tekton\ pipeline/ - **move to tekton files**
+`cd cd simple_react_app_docker/tekton\ pipeline/` - **move to tekton files**
 
 
 ---
@@ -51,7 +51,7 @@ cd cd simple_react_app_docker/tekton\ pipeline/ - **move to tekton files**
 
 ## Generate and apply credentials for Docker
 
-Docker login – **you have to make docker login to generate  /home/shizgara/.docker/config.json**  
+`docker login` – **you have to make docker login to generate  /home/shizgara/.docker/config.json**  
 Enter username and password to DockerHub. When it done, you will see
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker%20login.PNG)
@@ -61,8 +61,8 @@ kubectl create secret generic docker-credentials --from-file=/home/$USER/.docker
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/docker-credentials.png)
 
-kubectl apply -f docker-credentials.yaml – **run credentials**   
-**You can check it** – kubectl get secret
+`kubectl apply -f docker-credentials.yaml` – **run credentials**   
+**You can check it** – `kubectl get secret`
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/kubectl%20get%20secret.PNG)
 
@@ -77,7 +77,7 @@ Firstly we create the service account, which allow provides an identity for proc
  ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/service%20account%20yaml.PNG)
 
 #### Run service-account.yaml and check it  
-kubectl apply -f service-account.yaml
+`kubectl apply -f service-account.yaml`
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/kubectl%20get%20service%20account.PNG)
 
@@ -85,7 +85,7 @@ kubectl apply -f service-account.yaml
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/role%20yaml.PNG)
 
-kubectl apply -f role.yaml
+`kubectl apply -f role.yaml`
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/kubectl%20get%20role.PNG)
 
@@ -95,18 +95,18 @@ kubectl apply -f role.yaml
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/pipiline2.PNG)
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/pipilinerun.PNG)
 
-kubectl apply -f pipeline.yaml - **run pipeline**  
-kubectl create -f pipelinerun.yaml - **run pipelinerun**
+`kubectl apply -f pipeline.yaml` - **run pipeline**  
+`kubectl create -f pipelinerun.yaml` - **run pipelinerun**
 
 #### We can see the logs of pipelinerun
 
-tkn pipelinerun logs `<name created pipilinerun>` -f
+`tkn pipelinerun logs <name created pipilinerun> -f`
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/log1.PNG)
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/log2.PNG)
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/log3.PNG)
 
-kubectl get pods –watch
+`kubectl get pods –watch`
 
 ![](https://github.com/shizgara/simple_react_app_docker/blob/main/screenshots/get%20pods.PNG)
 
